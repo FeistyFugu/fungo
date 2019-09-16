@@ -14,6 +14,7 @@ Please note this is a work in progress. All constructs PROBABLY work but a lot m
 - FindFirst
 - FindLast
 - GroupBy
+- Match
 - Max
 - Min
 - Reduce

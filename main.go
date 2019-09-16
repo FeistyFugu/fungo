@@ -72,6 +72,7 @@ func main() {
 		"FindFirst": tpl.FindFirst,
 		"FindLast": tpl.FindLast,
 		"GroupBy": tpl.GroupBy,
+		"Match": tpl.Match,
 		"Max": tpl.Max,
 		"Min": tpl.Min,
 		"Reduce": tpl.Reduce,

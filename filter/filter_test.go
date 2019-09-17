@@ -42,7 +42,7 @@ func TestFilterEmptySlice(t *testing.T) {
 	})
 	var expected []int
 	if !check(result, expected) {
-		t.Error("Filter -> Expected'", expected, "' got' ", result, "'")
+		t.Error("Filter -> Expected", expected, "got", result, "'")
 	}
 }
 

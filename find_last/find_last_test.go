@@ -1,4 +1,4 @@
-package find_first
+package find_last
 
 //go:generate fungo -template=FindLast -fileName=find_last
 

@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	tpl "fungo/templates"
+	tpl "github.com/FeistyFugu/fungo/templates"
 	"os"
 	"path"
 	"strings"

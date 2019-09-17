@@ -13,7 +13,7 @@ var list = []string{"aaa", "bbb", "ccc", "ddd", "eee"}
 var expectedList = []string{"AAA", "BBB", "CCC", "DDD", "EEE"}
 
 func pred1(x string) (string, error) {
-	return string(strings.ToUpper(string(x))), nil
+	return strings.ToUpper(x), nil
 }
 
 func equal(a string, b string) (bool, error) {
@@ -24,7 +24,7 @@ func pred2(x string) (string, error) {
 	if x[0] == 'd' {
 		return "", errors.New("this is wrong") // true should be overridden
 	}
-	return string(strings.ToUpper(string(x))), nil
+	return strings.ToUpper(x), nil
 }
 
 func TestApply(t *testing.T) {

@@ -15,22 +15,21 @@ func check(a, b []int) bool {
 	return ok
 }
 
-func errCheck(a, b []int) (bool, error) {
-	ok, err := intEqual(a, b, func(a int, b int) (bool, error) {
-		if a > 4 {
-			return true, errors.New("Too high!")
-		}
-		return true, nil
-	})
-	return ok, err
-}
-
 func TestFilter(t *testing.T) {
-	data := []int{1, 2, 3, 4, 5, 6}
-	result, _ := Filter(data[:], func(x int) (bool, error) {
+	compare := func(x int) (bool, error) {
 		return x % 2 == 0, nil
-	})
+	}
+
+	data := []int{1, 2, 3, 4, 5, 6}
+	result, _ := Filter(data[:], compare)
 	expected := []int{2, 4, 6}
+	if !check(result, expected) {
+		t.Error("Filter -> Expected", expected, "got", result)
+	}
+
+	data = []int{1, 3, 5, 7, 9, 11, 13}
+	result, _ = Filter(data[:], compare)
+	expected = []int{}
 	if !check(result, expected) {
 		t.Error("Filter -> Expected", expected, "got", result)
 	}
@@ -48,12 +47,15 @@ func TestFilterEmptySlice(t *testing.T) {
 }
 
 func TestFilterWithError(t *testing.T) {
+	compare := func(x int) (bool, error) {
+		if x > 4 {
+			return true, errors.New("Too high!")
+		}
+		return true, nil
+	}
+
 	data := []int{1, 2, 3, 4, 5, 6}
-	result, _ := Filter(data[:], func(x int) (bool, error) {
-		return x % 2 == 0, nil
-	})
-	expected := []int{2, 4, 6}
-	_, err := errCheck(result, expected)
+	_, err := Filter(data[:], compare)
 	if err == nil {
 		t.Error("Filter -> Expected an error to be returned")
 	}

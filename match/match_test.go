@@ -2,7 +2,7 @@ package match
 
 import "testing"
 
-//go:generate fungo -template=Match -fileName=equals -t1=string -t2=int
+//go:generate fungo -template=Match -fileName=match -t1=string -t2=int
 
 func TestMatch(t *testing.T) {
 	a := []string{"Alex", "Chris", "Stephanie", "Jenny", "Bob"}

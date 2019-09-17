@@ -4,7 +4,7 @@ package apply
 
 import (
 	"errors"
-	fc "fungo/contains"
+	fc "github.com/FeistyFugu/fungo/contains"
 	"strings"
 	"testing"
 )

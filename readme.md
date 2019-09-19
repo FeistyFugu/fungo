@@ -1,6 +1,6 @@
 # Fungo
 
-Since Go still has no generics, classical loops like Apply, Reduce, Min or Max need to be re-implemented every time you need them for a new type. Fungo makes this a little less painful. It provides fast and simple implementations of many typical functional constructs and uses 'go generate' to create type safe implementation of each algorithm.
+Since Go still has no generics, classical loops like Apply, Reduce, Min or Max need to be re-implemented every time you need them for a new type. Fungo makes this a little less painful. It provides fast and simple implementations of many typical functional constructs and uses 'go generate' to create type safe versions of each algorithm.
 
 Please note this is a work in progress. All constructs PROBABLY work but a lot more testing is needed.
 

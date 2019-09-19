@@ -66,13 +66,13 @@ func main() {
 	var templates = map[string]string {
 		"All": tpl.All,
 		"Apply": tpl.Apply,
+		"Compare": tpl.Compare,
 		"Contains": tpl.Contains,
 		"FanOut": tpl.FanOut,
 		"Filter": tpl.Filter,
 		"FindFirst": tpl.FindFirst,
 		"FindLast": tpl.FindLast,
 		"GroupBy": tpl.GroupBy,
-		"Match": tpl.Match,
 		"Max": tpl.Max,
 		"Min": tpl.Min,
 		"Reduce": tpl.Reduce,
@@ -130,14 +130,7 @@ func main() {
 	fileName += ".go"
 
 	t1 := *t1Ptr
-	if !isValidName(t1) {
-		crash(exitCodeInvalidArg, "t1", t1)
-	}
-
 	t2 := *t2Ptr
-	if !isValidName(t2) {
-		crash(exitCodeInvalidArg, "t2", t2)
-	}
 
 	f, err := os.Create(fileName)
 	if err != nil {

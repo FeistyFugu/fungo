@@ -1,7 +1,7 @@
 package filter
 
 //go:generate fungo -template=Filter -fileName=filter -t1=int
-//go:generate fungo -template=Match -fileName=int_equal -functionName=intEqual -t1=int -t2=int
+//go:generate fungo -template=Compare -fileName=int_equal -functionName=intEqual -t1=int -t2=int
 
 import (
 	"errors"

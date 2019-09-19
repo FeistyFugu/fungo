@@ -1,6 +1,6 @@
 # Fungo
 
-Fast, simple and type safe implementation of typical functional constructs for the Go programming language. Use 'go generate' to create type safe implementation of each algorithm.
+Since Go still has no generics, classical loops like Apply, Reduce, Min or Max need to be re-implemented every time you need them for a new type. Fungo makes this a little less painful. It provides fast and simple implementations of many typical functional constructs and uses 'go generate' to create type safe implementation of each algorithm.
 
 Please note this is a work in progress. All constructs PROBABLY work but a lot more testing is needed.
 
@@ -8,13 +8,13 @@ Please note this is a work in progress. All constructs PROBABLY work but a lot m
 
 - All
 - Apply
+- Compare
 - Contains
 - FanOut
 - Filter
 - FindFirst
 - FindLast
 - GroupBy
-- Match
 - Max
 - Min
 - Reduce
@@ -46,6 +46,6 @@ Finally, to generate the code, open a terminal, cd to your project's root folder
 - t1: Name of the first type to use. By default, it's string.
 - t2: Name of the second type to use. By default, it's also string.
 
-### Known limitation:
+### Current limitations
 
-At the moment, t1 and t2 cannot be slices or array. Don't worry, I'm working on it.
+Right now, Fungo only works with slices. It might make sense in the future to add some support for maps.
